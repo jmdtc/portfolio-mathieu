@@ -75,7 +75,7 @@ export default function Home() {
                       ].map((skill) => (
                         <span
                           key={skill}
-                          className="px-3 py-1 text-xs border border-border rounded-full hover:border-amber-600/50 transition-colors duration-300"
+                          className="px-3 py-1 text-xs border border-border rounded-full hover:border-amber-600/50 hover:text-amber-600 transition-colors duration-300"
                         >
                           {skill}
                         </span>
@@ -219,7 +219,7 @@ export default function Home() {
                   ].map((post, index) => (
                     <article
                       key={index}
-                      className="group p-6 sm:p-8 border border-border rounded-lg hover:border-amber-600/50 transition-all duration-500 hover:shadow-lg cursor-pointer"
+                      className="group p-6 sm:p-8 border border-border rounded-lg hover:border-amber-600/50 hover:text-amber-600 transition-all duration-500 hover:shadow-lg cursor-pointer"
                     >
                       <div className="space-y-4">
                         <div className="flex items-center justify-between text-xs text-muted-foreground font-mono">
@@ -227,7 +227,7 @@ export default function Home() {
                           <span>{post.readTime}</span>
                         </div>
 
-                        <h3 className="text-lg sm:text-xl font-serif font-medium group-hover:text-muted-foreground transition-colors duration-300">
+                        <h3 className="text-lg sm:text-xl font-serif font-medium group-hover:text-amber-600 transition-colors duration-300">
                           {post.title}
                         </h3>
 
@@ -281,7 +281,7 @@ export default function Home() {
                         className="group flex items-center gap-3 text-foreground hover:text-amber-600 transition-colors duration-300"
                       >
                         <span className="text-base sm:text-lg">
-                          hello@mathieudelisle.com
+                          mathieudelisle@outlook.com
                         </span>
                         <svg
                           className="w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300"
@@ -343,10 +343,10 @@ export default function Home() {
               <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 sm:gap-8">
                 <div className="space-y-2">
                   <div className="text-sm text-muted-foreground">
-                    © 2025 Mathieu Delisle. All rights reserved.
+                    © 2025 Mathieu Delisle
                   </div>
                   <div className="text-xs text-muted-foreground">
-                    Built with v0.dev and Next.js
+                    Built with love and Next.js
                   </div>
                 </div>
               </div>
