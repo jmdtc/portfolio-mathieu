@@ -9,7 +9,9 @@ import { SectionNavigation } from "./SectionNavigation";
 
 export interface SectionLayoutProps {
   sections: string[];
-  children: (getSectionRef: (index: number) => (el: HTMLElement | null) => void) => ReactNode;
+  children: (
+    getSectionRef: (index: number) => (el: HTMLElement | null) => void,
+  ) => ReactNode;
   showNavigation?: boolean;
   navigationClassName?: string;
   observerConfig?: UseSectionObserverConfig;
@@ -24,7 +26,7 @@ export function SectionLayout({
 }: SectionLayoutProps) {
   const { activeSection, sectionsRef, getSectionRef } = useSectionObserver(
     sections,
-    observerConfig
+    observerConfig,
   );
 
   return (

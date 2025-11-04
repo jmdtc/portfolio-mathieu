@@ -5,15 +5,15 @@
   /* Light theme - warm light beige background with dark text */
   /* Updated background to #F7F5F3 warm beige and adjusted palette */
   --background: #f7f5f3;
-  --foreground: #49423D;
+  --foreground: #49423d;
   --card: #ffffff;
-  --card-foreground: #49423D;
+  --card-foreground: #49423d;
   --popover: #ffffff;
-  --popover-foreground: #49423D;
-  --primary: #49423D;
+  --popover-foreground: #49423d;
+  --primary: #49423d;
   --primary-foreground: #f7f5f3;
   --secondary: #e8e6e1;
-  --secondary-foreground: #49423D;
+  --secondary-foreground: #49423d;
   --muted: #d9d6cf;
   --muted-foreground: #666666;
   --accent: #c4a790;
@@ -22,7 +22,7 @@
   --destructive-foreground: #ffffff;
   --border: #e8e6e1;
   --input: #ffffff;
-  --ring: #49423D;
+  --ring: #49423d;
   --chart-1: #8b7355;
   --chart-2: #a98f7c;
   --chart-3: #c4a790;
@@ -30,13 +30,13 @@
   --chart-5: #e8ddd0;
   --radius: 0.625rem;
   --sidebar: #ffffff;
-  --sidebar-foreground: #49423D;
-  --sidebar-primary: #49423D;
+  --sidebar-foreground: #49423d;
+  --sidebar-primary: #49423d;
   --sidebar-primary-foreground: #f7f5f3;
   --sidebar-accent: #c4a790;
   --sidebar-accent-foreground: #ffffff;
   --sidebar-border: #e8e6e1;
-  --sidebar-ring: #49423D;
+  --sidebar-ring: #49423d;
 }
 
 @theme inline {

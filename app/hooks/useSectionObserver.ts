@@ -10,7 +10,7 @@ export interface UseSectionObserverConfig {
 
 export function useSectionObserver(
   sectionIds: string[],
-  config: UseSectionObserverConfig = {}
+  config: UseSectionObserverConfig = {},
 ) {
   const {
     threshold = 0.3,
@@ -34,7 +34,7 @@ export function useSectionObserver(
       {
         threshold,
         rootMargin,
-      }
+      },
     );
 
     sectionsRef.current.forEach((section) => {
