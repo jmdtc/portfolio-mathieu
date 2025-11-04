@@ -77,7 +77,7 @@ export const jobs: Job[] = [
     role: "Junior Full-Stack Developer",
     company: "Elara Digital",
     description:
-      "Built early versions of maintenance and production management software using React, TypeScript, GraphQL, and PostgreSQL.",
+      "Early engineer building maintenance and production management software from the ground up. Contributed to technical architecture, design, and product strategy as part of founding team.",
     tech: ["React", "GraphQL", "PostgreSQL"],
   },
   {
