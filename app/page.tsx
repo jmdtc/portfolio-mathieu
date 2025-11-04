@@ -4,13 +4,14 @@ import Link from "next/link";
 import { SectionLayout } from "./components/SectionLayout";
 
 export default function Home() {
-  const sections = ["intro", "work", "thoughts", "connect"];
+  // const sections = ["intro", "work", "thoughts", "connect"];
+  const sections = ["intro", "work", "connect"];
 
   return (
     <div className="min-h-screen bg-background text-foreground relative">
       <SectionLayout sections={sections}>
         {(getSectionRef) => (
-          <main className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-16">
+          <main className="max-w-5xl mx-auto px-6 sm:px-8 lg:px-16">
             <header
               id="intro"
               ref={getSectionRef(0)}
@@ -34,7 +35,15 @@ export default function Home() {
                       Full-Stack Engineer who appreciates
                       <span className="text-foreground"> neat products</span>.
                       Currently building carbon management solutions at
-                      <span className="text-foreground"> Cozero</span>.
+                      <a
+                        href="https://www.cozero.io/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-foreground hover:text-amber-600 transition-colors duration-300"
+                      >
+                        {" "}
+                        Cozero
+                      </a>
                     </p>
 
                     <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 text-sm text-muted-foreground">
@@ -54,7 +63,16 @@ export default function Home() {
                     </div>
                     <div className="space-y-2">
                       <div className="text-foreground">Software Engineer</div>
-                      <div className="text-muted-foreground">@ Cozero</div>
+                      <div className="text-muted-foreground">
+                        <a
+                          href="https://www.cozero.io/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="hover:text-amber-600 transition-colors duration-300"
+                        >
+                          @ Cozero
+                        </a>
+                      </div>
                       <div className="text-xs text-muted-foreground">
                         Sep 2024 — Present
                       </div>
@@ -66,20 +84,16 @@ export default function Home() {
                       FOCUS
                     </div>
                     <div className="flex flex-wrap gap-2">
-                      {[
-                        "React",
-                        "TypeScript",
-                        "Next.js",
-                        "Node.js",
-                        "PostgreSQL",
-                      ].map((skill) => (
-                        <span
-                          key={skill}
-                          className="px-3 py-1 text-xs border border-border rounded-full hover:border-amber-600/50 hover:text-amber-600 transition-colors duration-300"
-                        >
-                          {skill}
-                        </span>
-                      ))}
+                      {["React", "TypeScript", "Node.js", "PostgreSQL"].map(
+                        (skill) => (
+                          <span
+                            key={skill}
+                            className="px-3 py-1 text-xs border border-border rounded-full hover:border-amber-600/50 hover:text-amber-600 transition-colors duration-300"
+                          >
+                            {skill}
+                          </span>
+                        )
+                      )}
                     </div>
                   </div>
                 </div>
@@ -97,43 +111,43 @@ export default function Home() {
                     Selected Work
                   </h2>
                   <div className="text-sm text-muted-foreground font-mono">
-                    2020 — 2024
+                    2020 — 2025
                   </div>
                 </div>
 
                 <div className="space-y-8 sm:space-y-12">
                   {[
                     {
-                      year: "2024",
+                      year: "2024 - Present",
                       role: "Software Engineer",
                       company: "Cozero",
                       description:
                         "Building carbon management software to measure, reduce, and report on corporate and product emissions.",
-                      tech: ["React", "TypeScript", "Next.js"],
+                      tech: ["React", "Nest.js", "TypeScript"],
                     },
                     {
-                      year: "2022",
+                      year: "2022 - 2024",
                       role: "Software Engineer",
                       company: "Charles",
                       description:
                         "Developed marketing campaign systems and audience segmentation tools for WhatsApp CRM platform. Optimized performance using Redis and advanced SQL.",
-                      tech: ["React", "GraphQL", "Redis"],
+                      tech: ["Vue", "Express.js", "TypeScript"],
                     },
                     {
-                      year: "2021",
+                      year: "2021 - 2022",
                       role: "Junior Full-Stack Developer",
                       company: "Elara Digital",
                       description:
                         "Built early versions of maintenance and production management software using React, TypeScript, GraphQL, and PostgreSQL.",
-                      tech: ["React", "GraphQL", "Postgres"],
+                      tech: ["React", "GraphQL", "TypeScript"],
                     },
                     {
-                      year: "2020",
+                      year: "2021",
                       role: "Full Stack Developer",
                       company: "Tracks",
                       description:
                         "Developed new features and improved testing environment. Built POC for company website using static site generation.",
-                      tech: ["Vue", "Jest", "Storybook"],
+                      tech: ["Vue", "Django", "Python"],
                     },
                   ].map((job, index) => (
                     <div
@@ -176,7 +190,7 @@ export default function Home() {
               </div>
             </section>
 
-            <section
+            {/* <section
               id="thoughts"
               ref={getSectionRef(2)}
               className="min-h-screen py-20 sm:py-32 opacity-0"
@@ -256,11 +270,11 @@ export default function Home() {
                   ))}
                 </div>
               </div>
-            </section>
+            </section> */}
 
             <section
               id="connect"
-              ref={getSectionRef(3)}
+              ref={getSectionRef(2)}
               className="py-20 sm:py-32 opacity-0"
             >
               <div className="grid lg:grid-cols-2 gap-12 sm:gap-16">
@@ -302,7 +316,7 @@ export default function Home() {
                 </div>
 
                 <div className="space-y-6 sm:space-y-8">
-                  <div className="text-sm text-muted-foreground font-mono">
+                  <div className="text-sm text-muted-foreground font-mono h-[40px]">
                     ELSEWHERE
                   </div>
 

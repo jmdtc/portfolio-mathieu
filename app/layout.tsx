@@ -1,14 +1,14 @@
 import type React from "react";
 import type { Metadata } from "next";
-import { Instrument_Serif, DM_Sans, Space_Mono } from "next/font/google";
+import { Gelasio, DM_Sans, Space_Mono } from "next/font/google";
 import clsx from "clsx";
 import "./globals.css";
 
-const instrumentSerif = Instrument_Serif({
+const instrumentSerif = Gelasio({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-instrument-serif",
-  weight: "400",
+  weight: ["400", "700"],
 });
 
 const dmSans = DM_Sans({
@@ -42,7 +42,7 @@ export default function RootLayout({
       className={clsx(
         instrumentSerif.variable,
         dmSans.variable,
-        spaceMono.variable,
+        spaceMono.variable
       )}
     >
       <body className="font-sans antialiased">{children}</body>
