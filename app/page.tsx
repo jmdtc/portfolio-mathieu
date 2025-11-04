@@ -2,11 +2,19 @@
 
 import Link from "next/link";
 import { SectionLayout } from "./components/SectionLayout";
+import {
+  sections,
+  hero,
+  currentWork,
+  focusLabel,
+  skills,
+  jobs,
+  connect,
+  socialLinks,
+  footer,
+} from "./homepage-content";
 
 export default function Home() {
-  // const sections = ["intro", "work", "thoughts", "connect"];
-  const sections = ["intro", "work", "connect"];
-
   return (
     <div className="min-h-screen bg-background text-foreground relative">
       <SectionLayout sections={sections}>
@@ -21,79 +29,87 @@ export default function Home() {
                 <div className="lg:col-span-3 space-y-6 sm:space-y-8">
                   <div className="space-y-3 sm:space-y-2">
                     <div className="text-sm text-muted-foreground font-mono tracking-wider">
-                      PORTFOLIO / 2025
+                      {hero.label}
                     </div>
                     <h1 className="text-5xl sm:text-6xl lg:text-7xl font-serif font-light tracking-tight">
-                      Mathieu
+                      {hero.firstName}
                       <br />
-                      <span className="text-amber-600">Delisle</span>
+                      <span className="text-amber-600">{hero.lastName}</span>
                     </h1>
                   </div>
 
                   <div className="space-y-6 max-w-md">
                     <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed">
-                      Full-Stack Engineer who appreciates
-                      <span className="text-foreground"> neat products</span>.
-                      Currently building carbon management solutions at
+                      {hero.title}
+                      <span className="text-foreground">
+                        {" "}
+                        {hero.titleHighlight}
+                      </span>
+                      . {hero.bio}
                       <a
-                        href="https://www.cozero.io/"
+                        href={hero.company.url}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-foreground hover:text-amber-600 transition-colors duration-300"
                       >
                         {" "}
-                        Cozero
+                        {hero.company.name}
                       </a>
                     </p>
 
                     <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 text-sm text-muted-foreground">
                       <div className="flex items-center gap-2">
                         <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                        Available for collaboration
+                        {hero.availability.status}
                       </div>
-                      <div>Berlin, Germany</div>
+                      <div>{hero.availability.location}</div>
                     </div>
                   </div>
                 </div>
 
                 <div className="lg:col-span-2 flex flex-col justify-end space-y-6 sm:space-y-8 mt-8 lg:mt-0">
-                  <div className="space-y-4">
-                    <div className="text-sm text-muted-foreground font-mono">
-                      CURRENTLY
+                  <div className="text-sm text-muted-foreground font-mono">
+                    {currentWork.sectionLabel}
+                  </div>
+                  <div className="space-y-2">
+                    <div className="text-foreground">
+                      {currentWork.mainRole.title}
                     </div>
-                    <div className="space-y-2">
-                      <div className="text-foreground">Software Engineer</div>
-                      <div className="text-muted-foreground">
-                        <a
-                          href="https://www.cozero.io/"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="hover:text-amber-600 transition-colors duration-300"
-                        >
-                          @ Cozero
-                        </a>
-                      </div>
-                      <div className="text-xs text-muted-foreground">
-                        Sep 2024 — Present
-                      </div>
+                    <div className="text-muted-foreground">
+                      <a
+                        href={currentWork.mainRole.companyUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:text-amber-600 transition-colors duration-300"
+                      >
+                        @ {currentWork.mainRole.company}
+                      </a>
+                    </div>
+                    <div className="text-xs text-muted-foreground">
+                      {currentWork.mainRole.period}
                     </div>
                   </div>
-
+                  <div className="space-y-2">
+                    <div className="text-foreground">
+                      {currentWork.sideProject.title}
+                    </div>
+                    <div className="text-muted-foreground">
+                      {currentWork.sideProject.description}
+                    </div>
+                  </div>
                   <div className="space-y-4">
                     <div className="text-sm text-muted-foreground font-mono">
-                      FOCUS
+                      {focusLabel}
                     </div>
                     <div className="flex flex-wrap gap-2">
-                      {["React", "TypeScript", "Node.js", "PostgreSQL"].map(
-                        (skill) => (
-                          <span
-                            key={skill}
-                            className="px-3 py-1 text-xs border border-border rounded-full hover:border-amber-600/50 hover:text-amber-600 transition-colors duration-300"
-                          >
-                            {skill}
-                          </span>
-                        )
-                      )}
+                      {skills.map((skill) => (
+                        <span
+                          key={skill}
+                          className="px-3 py-1 text-xs border border-border rounded-full hover:border-amber-600/50 hover:text-amber-600 transition-colors duration-300"
+                        >
+                          {skill}
+                        </span>
+                      ))}
                     </div>
                   </div>
                 </div>
@@ -110,46 +126,10 @@ export default function Home() {
                   <h2 className="text-3xl sm:text-4xl font-serif font-light">
                     Selected Work
                   </h2>
-                  <div className="text-sm text-muted-foreground font-mono">
-                    2020 — 2025
-                  </div>
                 </div>
 
                 <div className="space-y-8 sm:space-y-12">
-                  {[
-                    {
-                      year: "2024 - Present",
-                      role: "Software Engineer",
-                      company: "Cozero",
-                      description:
-                        "Building carbon management software to measure, reduce, and report on corporate and product emissions.",
-                      tech: ["React", "Nest.js", "TypeScript"],
-                    },
-                    {
-                      year: "2022 - 2024",
-                      role: "Software Engineer",
-                      company: "Charles",
-                      description:
-                        "Developed marketing campaign systems and audience segmentation tools for WhatsApp CRM platform. Optimized performance using Redis and advanced SQL.",
-                      tech: ["Vue", "Express.js", "TypeScript"],
-                    },
-                    {
-                      year: "2021 - 2022",
-                      role: "Junior Full-Stack Developer",
-                      company: "Elara Digital",
-                      description:
-                        "Built early versions of maintenance and production management software using React, TypeScript, GraphQL, and PostgreSQL.",
-                      tech: ["React", "GraphQL", "TypeScript"],
-                    },
-                    {
-                      year: "2021",
-                      role: "Full Stack Developer",
-                      company: "Tracks",
-                      description:
-                        "Developed new features and improved testing environment. Built POC for company website using static site generation.",
-                      tech: ["Vue", "Django", "Python"],
-                    },
-                  ].map((job, index) => (
+                  {jobs.map((job, index) => (
                     <div
                       key={index}
                       className="group grid lg:grid-cols-12 gap-4 sm:gap-8 py-6 sm:py-8"
@@ -163,11 +143,11 @@ export default function Home() {
                       <div className="lg:col-span-6 space-y-3">
                         <div>
                           <h3 className="text-lg sm:text-xl font-serif font-medium">
-                            {job.role}
+                            {job.role} · {job.company}
                           </h3>
-                          <div className="text-muted-foreground">
+                          {/* <div className="text-muted-foreground">
                             {job.company}
-                          </div>
+                          </div> */}
                         </div>
                         <p className="text-muted-foreground leading-relaxed max-w-lg">
                           {job.description}
@@ -280,22 +260,20 @@ export default function Home() {
               <div className="grid lg:grid-cols-2 gap-12 sm:gap-16">
                 <div className="space-y-6 sm:space-y-8">
                   <h2 className="text-3xl sm:text-4xl font-serif font-light">
-                    Let&apos;s Connect
+                    {connect.heading}
                   </h2>
                   <div className="space-y-6">
                     <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed">
-                      Always interested in new opportunities, collaborations,
-                      and conversations about technology and full-stack
-                      development.
+                      {connect.bio}
                     </p>
 
                     <div className="space-y-4">
                       <Link
-                        href="mailto:hello@mathieudelisle.com"
+                        href={`mailto:${connect.email}`}
                         className="group flex items-center gap-3 text-foreground hover:text-amber-600 transition-colors duration-300"
                       >
                         <span className="text-base sm:text-lg">
-                          mathieudelisle@outlook.com
+                          {connect.email}
                         </span>
                         <svg
                           className="w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300"
@@ -317,22 +295,11 @@ export default function Home() {
 
                 <div className="space-y-6 sm:space-y-8">
                   <div className="text-sm text-muted-foreground font-mono h-[40px]">
-                    ELSEWHERE
+                    {connect.elsewhereLabel}
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    {[
-                      {
-                        name: "GitHub",
-                        handle: "@jmdtc",
-                        url: "https://github.com/jmdtc",
-                      },
-                      {
-                        name: "LinkedIn",
-                        handle: "mathieu-delisle",
-                        url: "https://linkedin.com/in/mathieu-delisle",
-                      },
-                    ].map((social) => (
+                    {socialLinks.map((social) => (
                       <Link
                         key={social.name}
                         href={social.url}
@@ -357,10 +324,10 @@ export default function Home() {
               <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 sm:gap-8">
                 <div className="space-y-2">
                   <div className="text-sm text-muted-foreground">
-                    © 2025 Mathieu Delisle
+                    {footer.copyright}
                   </div>
                   <div className="text-xs text-muted-foreground">
-                    Built with love and Next.js
+                    {footer.tagline}
                   </div>
                 </div>
               </div>
