@@ -1,20 +1,20 @@
 import type React from "react";
 import type { Metadata } from "next";
-import { Gelasio, DM_Sans, Space_Mono } from "next/font/google";
+import { Gelasio, Archivo, Space_Mono } from "next/font/google";
 import clsx from "clsx";
 import "./globals.css";
 
-const instrumentSerif = Gelasio({
+const gelasio = Gelasio({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-instrument-serif",
+  variable: "--font-gelasio",
   weight: ["400", "700"],
 });
 
-const dmSans = DM_Sans({
+const archivo = Archivo({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-dm-sans",
+  variable: "--font-archivo",
 });
 
 const spaceMono = Space_Mono({
@@ -28,7 +28,6 @@ export const metadata: Metadata = {
   title: "Mathieu Delisle - Full Stack Engineer",
   description:
     "Full Stack Engineer based in Berlin, Germany. Building neat products with React, TypeScript, and Next.js.",
-  generator: "v0.app",
 };
 
 export default function RootLayout({
@@ -39,11 +38,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={clsx(
-        instrumentSerif.variable,
-        dmSans.variable,
-        spaceMono.variable
-      )}
+      className={clsx(gelasio.variable, archivo.variable, spaceMono.variable)}
     >
       <body className="font-sans antialiased">{children}</body>
     </html>

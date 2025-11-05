@@ -18,8 +18,9 @@ export default function Home() {
               <div className="grid lg:grid-cols-5 gap-12 sm:gap-16 w-full">
                 <div className="lg:col-span-3 space-y-6 sm:space-y-8">
                   <div className="space-y-3 sm:space-y-2">
-                    <h1 className="text-5xl sm:text-6xl lg:text-7xl font-serif font-light tracking-tight">
-                      Mathieu <span className="text-accent-primary">Delisle</span>
+                    <h1 className="text-6xl lg:text-7xl font-serif font-light tracking-tight">
+                      Mathieu{" "}
+                      <span className="text-accent-primary">Delisle</span>
                     </h1>
                   </div>
 
@@ -38,7 +39,7 @@ export default function Home() {
                       </a>
                     </p>
 
-                    <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 text-lg sm:text-xl text-foreground">
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-x-3 gap-y-2 sm:gap-4 text-foreground">
                       <div className="flex items-center gap-2">
                         <div className="w-2 h-2 bg-accent-purple rounded-full animate-pulse"></div>
                         Available for collaboration
@@ -50,7 +51,7 @@ export default function Home() {
 
                 <div className="lg:col-span-2 flex flex-col justify-end space-y-6 sm:space-y-8 mt-8 lg:mt-0">
                   <div>
-                    <div className="text-sm text-muted-foreground font-mono mb-4">
+                    <div className="text-xs text-muted-foreground mb-4">
                       CURRENTLY
                     </div>
                     <div className="space-y-2">
@@ -63,18 +64,18 @@ export default function Home() {
                             rel="noopener noreferrer"
                             className="hover:text-accent-primary transition-colors duration-300"
                           >
-                            @ Cozero
+                            @Cozero
                           </a>
                         </span>
                       </div>
                       <span className="text-foreground">
-                        Learning Golang @ Secret side project
+                        Learning Golang @Secret side project
                       </span>
                     </div>
                   </div>
 
                   <div>
-                    <div className="text-sm text-muted-foreground font-mono mb-4">
+                    <div className="text-xs text-muted-foreground mb-4">
                       FOCUS
                     </div>
                     <div className="flex flex-wrap gap-2">
@@ -234,7 +235,7 @@ export default function Home() {
                     Let&apos;s Connect
                   </h2>
                   <div className="space-y-6">
-                    <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed">
+                    <p className="text-lg sm:text-xl leading-relaxed">
                       Always interested in new opportunities, collaborations,
                       and conversations about technology and full-stack
                       development.
@@ -267,7 +268,7 @@ export default function Home() {
                 </div>
 
                 <div>
-                  <div className="text-sm text-muted-foreground font-mono mb-4">
+                  <div className="text-sm text-muted-foreground mb-4">
                     ELSEWHERE
                   </div>
 

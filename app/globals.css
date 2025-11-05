@@ -47,17 +47,25 @@
   h1,
   h2,
   h3 {
-    font-family: var(--font-instrument-serif);
+    font-family: var(--font-gelasio);
   }
 
   body {
-    font-family: var(--font-dm-sans);
+    font-family: var(--font-archivo);
   }
 }
 
 @layer utilities {
   .font-serif {
-    font-family: var(--font-instrument-serif);
+    font-family: var(--font-gelasio);
+  }
+
+  .font-sans {
+    font-family: var(--font-archivo);
+  }
+
+  .font-mono {
+    font-family: var(--font-space-mono);
   }
 
   .animate-fade-in-up {
