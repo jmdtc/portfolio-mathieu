@@ -2,21 +2,11 @@
 
 import Link from "next/link";
 import { SectionLayout } from "./components/SectionLayout";
-import {
-  sections,
-  hero,
-  currentWork,
-  focusLabel,
-  skills,
-  jobs,
-  connect,
-  socialLinks,
-  footer,
-} from "./homepage-content";
+import { sections, skills, jobs, socialLinks } from "./homepage-content";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background text-foreground relative">
+    <div className="min-h-screen bg-background text-foreground relative overflow-x-hidden">
       <SectionLayout sections={sections}>
         {(getSectionRef) => (
           <main className="max-w-5xl mx-auto px-6 sm:px-8 lg:px-16">
@@ -28,84 +18,70 @@ export default function Home() {
               <div className="grid lg:grid-cols-5 gap-12 sm:gap-16 w-full">
                 <div className="lg:col-span-3 space-y-6 sm:space-y-8">
                   <div className="space-y-3 sm:space-y-2">
-                    <div className="text-sm text-muted-foreground font-mono tracking-wider">
-                      {hero.label}
-                    </div>
                     <h1 className="text-5xl sm:text-6xl lg:text-7xl font-serif font-light tracking-tight">
-                      {hero.firstName}
-                      <br />
-                      <span className="text-amber-600">{hero.lastName}</span>
+                      Mathieu <span className="text-accent-primary">Delisle</span>
                     </h1>
                   </div>
 
-                  <div className="space-y-6 max-w-md">
-                    <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed">
-                      {hero.title}
-                      <span className="text-foreground">
-                        {" "}
-                        {hero.titleHighlight}
-                      </span>
-                      . {hero.bio}
+                  <div className="space-y-6">
+                    <p className="text-lg sm:text-xl leading-relaxed">
+                      Full-Stack Engineer who appreciates neat products.
+                      Currently building carbon management solutions at
                       <a
-                        href={hero.company.url}
+                        href="https://www.cozero.io/"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-foreground hover:text-amber-600 transition-colors duration-300"
+                        className="hover:text-accent-primary transition-colors duration-300"
                       >
                         {" "}
-                        {hero.company.name}
+                        Cozero
                       </a>
                     </p>
 
-                    <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 text-sm text-muted-foreground">
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 text-lg sm:text-xl text-foreground">
                       <div className="flex items-center gap-2">
-                        <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                        {hero.availability.status}
+                        <div className="w-2 h-2 bg-accent-purple rounded-full animate-pulse"></div>
+                        Available for collaboration
                       </div>
-                      <div>{hero.availability.location}</div>
+                      <div>Berlin, Germany</div>
                     </div>
                   </div>
                 </div>
 
                 <div className="lg:col-span-2 flex flex-col justify-end space-y-6 sm:space-y-8 mt-8 lg:mt-0">
-                  <div className="text-sm text-muted-foreground font-mono">
-                    {currentWork.sectionLabel}
-                  </div>
-                  <div className="space-y-2">
-                    <div className="text-foreground">
-                      {currentWork.mainRole.title}
+                  <div>
+                    <div className="text-sm text-muted-foreground font-mono mb-4">
+                      CURRENTLY
                     </div>
-                    <div className="text-muted-foreground">
-                      <a
-                        href={currentWork.mainRole.companyUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="hover:text-amber-600 transition-colors duration-300"
-                      >
-                        @ {currentWork.mainRole.company}
-                      </a>
-                    </div>
-                    <div className="text-xs text-muted-foreground">
-                      {currentWork.mainRole.period}
-                    </div>
-                  </div>
-                  <div className="space-y-2">
-                    <div className="text-foreground">
-                      {currentWork.sideProject.title}
-                    </div>
-                    <div className="text-muted-foreground">
-                      {currentWork.sideProject.description}
+                    <div className="space-y-2">
+                      <div className="text-foreground">
+                        Software Engineer{" "}
+                        <span>
+                          <a
+                            href="https://www.cozero.io/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hover:text-accent-primary transition-colors duration-300"
+                          >
+                            @ Cozero
+                          </a>
+                        </span>
+                      </div>
+                      <span className="text-foreground">
+                        Learning Golang @ Secret side project
+                      </span>
                     </div>
                   </div>
-                  <div className="space-y-4">
-                    <div className="text-sm text-muted-foreground font-mono">
-                      {focusLabel}
+
+                  <div>
+                    <div className="text-sm text-muted-foreground font-mono mb-4">
+                      FOCUS
                     </div>
                     <div className="flex flex-wrap gap-2">
                       {skills.map((skill) => (
                         <span
                           key={skill}
-                          className="px-3 py-1 text-xs border border-border rounded-full hover:border-amber-600/50 hover:text-amber-600 transition-colors duration-300"
+                          className="px-3 py-1 text-xs border border-border rounded-full hover:border-accent-primary/50 hover:text-accent-primary transition-colors duration-300"
                         >
                           {skill}
                         </span>
@@ -121,12 +97,10 @@ export default function Home() {
               ref={getSectionRef(1)}
               className="min-h-screen py-20 sm:py-32 opacity-0"
             >
-              <div className="space-y-12 sm:space-y-16">
-                <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
-                  <h2 className="text-3xl sm:text-4xl font-serif font-light">
-                    Selected Work
-                  </h2>
-                </div>
+              <div>
+                <h2 className="text-3xl sm:text-4xl font-serif font-light mb-4">
+                  Selected Work
+                </h2>
 
                 <div className="space-y-8 sm:space-y-12">
                   {jobs.map((job, index) => (
@@ -145,16 +119,13 @@ export default function Home() {
                           <h3 className="text-lg sm:text-xl font-serif font-medium">
                             {job.role} · {job.company}
                           </h3>
-                          {/* <div className="text-muted-foreground">
-                            {job.company}
-                          </div> */}
                         </div>
                         <p className="text-muted-foreground leading-relaxed max-w-lg">
                           {job.description}
                         </p>
                       </div>
 
-                      <div className="lg:col-span-4 flex flex-wrap gap-2 lg:justify-end mt-2 lg:mt-0">
+                      <div className="lg:col-span-4 flex flex-wrap gap-2 lg:justify-end items-start self-start mt-2 lg:mt-0">
                         {job.tech.map((tech) => (
                           <span
                             key={tech}
@@ -213,7 +184,7 @@ export default function Home() {
                   ].map((post, index) => (
                     <article
                       key={index}
-                      className="group p-6 sm:p-8 border border-border rounded-lg hover:border-amber-600/50 hover:text-amber-600 transition-all duration-500 hover:shadow-lg cursor-pointer"
+                      className="group p-6 sm:p-8 border border-border rounded-lg hover:border-accent-primary/50 hover:text-accent-primary transition-all duration-500 hover:shadow-lg cursor-pointer"
                     >
                       <div className="space-y-4">
                         <div className="flex items-center justify-between text-xs text-muted-foreground font-mono">
@@ -221,7 +192,7 @@ export default function Home() {
                           <span>{post.readTime}</span>
                         </div>
 
-                        <h3 className="text-lg sm:text-xl font-serif font-medium group-hover:text-amber-600 transition-colors duration-300">
+                        <h3 className="text-lg sm:text-xl font-serif font-medium group-hover:text-accent-primary transition-colors duration-300">
                           {post.title}
                         </h3>
 
@@ -258,22 +229,24 @@ export default function Home() {
               className="py-20 sm:py-32 opacity-0"
             >
               <div className="grid lg:grid-cols-2 gap-12 sm:gap-16">
-                <div className="space-y-6 sm:space-y-8">
-                  <h2 className="text-3xl sm:text-4xl font-serif font-light">
-                    {connect.heading}
+                <div>
+                  <h2 className="text-3xl sm:text-4xl font-serif font-light mb-4">
+                    Let&apos;s Connect
                   </h2>
                   <div className="space-y-6">
                     <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed">
-                      {connect.bio}
+                      Always interested in new opportunities, collaborations,
+                      and conversations about technology and full-stack
+                      development.
                     </p>
 
                     <div className="space-y-4">
                       <Link
-                        href={`mailto:${connect.email}`}
-                        className="group flex items-center gap-3 text-foreground hover:text-amber-600 transition-colors duration-300"
+                        href="mailto:mathieudelisle@outlook.com"
+                        className="group flex items-center gap-3 text-foreground hover:text-accent-primary transition-colors duration-300"
                       >
                         <span className="text-base sm:text-lg">
-                          {connect.email}
+                          mathieudelisle@outlook.com
                         </span>
                         <svg
                           className="w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300"
@@ -293,9 +266,9 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div className="space-y-6 sm:space-y-8">
-                  <div className="text-sm text-muted-foreground font-mono h-[40px]">
-                    {connect.elsewhereLabel}
+                <div>
+                  <div className="text-sm text-muted-foreground font-mono mb-4">
+                    ELSEWHERE
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -303,10 +276,10 @@ export default function Home() {
                       <Link
                         key={social.name}
                         href={social.url}
-                        className="group p-4 border border-border rounded-lg hover:border-amber-600/50 transition-all duration-300 hover:shadow-sm"
+                        className="group p-4 border border-border rounded-lg hover:border-accent-primary/50 transition-all duration-300 hover:shadow-sm"
                       >
                         <div className="space-y-2">
-                          <div className="text-foreground group-hover:text-amber-600 transition-colors duration-300">
+                          <div className="text-foreground group-hover:text-accent-primary transition-colors duration-300">
                             {social.name}
                           </div>
                           <div className="text-sm text-muted-foreground">
@@ -324,10 +297,10 @@ export default function Home() {
               <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 sm:gap-8">
                 <div className="space-y-2">
                   <div className="text-sm text-muted-foreground">
-                    {footer.copyright}
+                    © 2025 Mathieu Delisle
                   </div>
                   <div className="text-xs text-muted-foreground">
-                    {footer.tagline}
+                    Built with love and Next.js
                   </div>
                 </div>
               </div>

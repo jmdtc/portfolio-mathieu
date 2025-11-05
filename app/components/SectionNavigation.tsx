@@ -33,8 +33,8 @@ export function SectionNavigation({
             onClick={() => scrollToSection(index)}
             className={`w-2 h-8 rounded-full transition-all duration-500 ${
               activeSection === section
-                ? "bg-amber-600"
-                : "bg-muted-foreground/30 hover:bg-amber-600/50"
+                ? "bg-accent-primary"
+                : "bg-muted-foreground/30 hover:bg-accent-primary/50"
             }`}
             aria-label={`Navigate to ${section}`}
           />
