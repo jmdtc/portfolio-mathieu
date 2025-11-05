@@ -20,6 +20,7 @@ export interface Job {
   company: string;
   description: string;
   tech: string[];
+  website?: string;
 }
 
 export const jobs: Job[] = [
@@ -30,6 +31,7 @@ export const jobs: Job[] = [
     description:
       "Built supplier engagement platform for enterprise carbon accounting. Modernized frontend infrastructure and built scalable interfaces enabling clients to calculate product-level emissions and efficiently process large-scale data imports.",
     tech: ["React", "Nest.js", "PostgreSQL", "Prisma", "Typescript"],
+    website: "https://www.cozero.io/",
   },
   {
     year: "2024 - 2022",
@@ -38,6 +40,7 @@ export const jobs: Job[] = [
     description:
       "Developed core components of WhatsApp-based CRM platform. Led frontend work on template builder and segmentation tool redesign. Owned invalid contact management system and resolved critical performance bottlenecks in campaign infrastructure",
     tech: ["Vue", "Express.js", "PostgreSQL", "Storybook", "BullMQ"],
+    website: "https://www.hello-charles.com/",
   },
   {
     year: "2022 - 2021",
@@ -46,6 +49,7 @@ export const jobs: Job[] = [
     description:
       "Early engineer building maintenance and production management software from the ground up. Contributed to technical architecture, design, and product strategy as part of founding team.",
     tech: ["React", "GraphQL", "PostgreSQL", "Typescript", "Hasura"],
+    website: "https://getelara.de/",
   },
   {
     year: "2021",
@@ -54,6 +58,7 @@ export const jobs: Job[] = [
     description:
       "Develop fuel consomuption tracking features. Built POC for company website using static site generation.",
     tech: ["Vue", "Django", "Python"],
+    website: "https://www.transporeon.com/",
   },
 ];
 

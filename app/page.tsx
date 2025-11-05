@@ -51,9 +51,7 @@ export default function Home() {
 
                 <div className="lg:col-span-2 flex flex-col justify-end space-y-6 sm:space-y-8 mt-8 lg:mt-0">
                   <div>
-                    <div className="text-xs text-muted-foreground mb-4">
-                      CURRENTLY
-                    </div>
+                    <div className="mb-4">CURRENTLY</div>
                     <div className="space-y-2">
                       <div className="text-foreground">
                         Software Engineer{" "}
@@ -74,7 +72,7 @@ export default function Home() {
                     </div>
                   </div>
 
-                  <div>
+                  {/* <div>
                     <div className="text-xs text-muted-foreground mb-4">
                       FOCUS
                     </div>
@@ -88,7 +86,7 @@ export default function Home() {
                         </span>
                       ))}
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </header>
@@ -104,40 +102,58 @@ export default function Home() {
                 </h2>
 
                 <div className="space-y-8 sm:space-y-12">
-                  {jobs.map((job, index) => (
-                    <div
-                      key={index}
-                      className="group grid lg:grid-cols-12 gap-4 sm:gap-8 py-6 sm:py-8"
-                    >
-                      <div className="lg:col-span-2">
-                        <div className="text-xl sm:text-2xl font-serif font-light text-muted-foreground group-hover:text-foreground transition-colors duration-500">
-                          {job.year}
+                  {jobs.map((job, index) => {
+                    const content = (
+                      <>
+                        <div className="lg:col-span-2">
+                          <div className="text-xl sm:text-2xl font-serif font-light text-muted-foreground group-hover:text-foreground transition-colors duration-500">
+                            {job.year}
+                          </div>
                         </div>
-                      </div>
 
-                      <div className="lg:col-span-6 space-y-3">
-                        <div>
-                          <h3 className="text-lg sm:text-xl font-serif font-medium">
-                            {job.role} · {job.company}
-                          </h3>
+                        <div className="lg:col-span-6 space-y-3">
+                          <div>
+                            <h3 className="text-lg sm:text-xl font-serif font-medium group-hover:text-accent-primary transition-colors duration-300">
+                              {job.role} · {job.company}
+                            </h3>
+                          </div>
+                          <p className="text-muted-foreground group-hover:text-foreground leading-relaxed max-w-lg transition-colors duration-300">
+                            {job.description}
+                          </p>
                         </div>
-                        <p className="text-muted-foreground leading-relaxed max-w-lg">
-                          {job.description}
-                        </p>
-                      </div>
 
-                      <div className="lg:col-span-4 flex flex-wrap gap-2 lg:justify-end items-start self-start mt-2 lg:mt-0">
-                        {job.tech.map((tech) => (
-                          <span
-                            key={tech}
-                            className="px-2 py-1 text-xs text-muted-foreground rounded group-hover:border-muted-foreground/50 transition-colors duration-500 font-mono"
-                          >
-                            {tech}
-                          </span>
-                        ))}
+                        <div className="lg:col-span-4 flex flex-wrap gap-2 lg:justify-end items-start self-start mt-2 lg:mt-0">
+                          {job.tech.map((tech) => (
+                            <span
+                              key={tech}
+                              className="px-2 py-1 text-xs text-muted-foreground rounded group-hover:border-muted-foreground/50 transition-colors duration-500 font-mono"
+                            >
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
+                      </>
+                    );
+
+                    return job.website ? (
+                      <a
+                        key={index}
+                        href={job.website}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group grid lg:grid-cols-12 gap-4 sm:gap-8 py-6 sm:py-8 block"
+                      >
+                        {content}
+                      </a>
+                    ) : (
+                      <div
+                        key={index}
+                        className="group grid lg:grid-cols-12 gap-4 sm:gap-8 py-6 sm:py-8"
+                      >
+                        {content}
                       </div>
-                    </div>
-                  ))}
+                    );
+                  })}
                 </div>
               </div>
             </section>
@@ -268,9 +284,7 @@ export default function Home() {
                 </div>
 
                 <div>
-                  <div className="text-sm text-muted-foreground mb-4">
-                    ELSEWHERE
-                  </div>
+                  <div className="mb-4">ELSEWHERE</div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {socialLinks.map((social) => (
