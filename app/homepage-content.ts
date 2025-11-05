@@ -20,7 +20,7 @@ export interface Job {
   company: string;
   description: string;
   tech: string[];
-  website?: string;
+  website: string;
 }
 
 export const jobs: Job[] = [

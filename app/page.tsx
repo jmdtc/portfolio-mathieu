@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 import { SectionLayout } from "./components/SectionLayout";
 import { sections, skills, jobs, socialLinks } from "./homepage-content";
 
@@ -26,17 +27,9 @@ export default function Home() {
 
                   <div className="space-y-6">
                     <p className="text-lg sm:text-xl leading-relaxed">
-                      Full-Stack Engineer who appreciates neat products.
-                      Currently building carbon management solutions at
-                      <a
-                        href="https://www.cozero.io/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="hover:text-accent-primary transition-colors duration-300"
-                      >
-                        {" "}
-                        Cozero
-                      </a>
+                      I&apos;m a Full-Stack Engineer who appreciates neat
+                      products. <br /> For the last 5 years, I&apos;ve been
+                      building software for startups with Typescript
                     </p>
 
                     <div className="flex flex-col sm:flex-row sm:items-center gap-x-3 gap-y-2 sm:gap-4 text-foreground">
@@ -102,8 +95,11 @@ export default function Home() {
 
                       <div className="lg:col-span-6 space-y-3">
                         <div>
-                          <h3 className="text-lg sm:text-xl font-serif font-medium group-hover:text-accent-primary transition-colors duration-300">
-                            {job.role} · {job.company}
+                          <h3 className="text-lg sm:text-xl font-serif font-medium group-hover:text-accent-primary transition-colors duration-300 flex items-center gap-2">
+                            <span>
+                              {job.role} · {job.company}
+                            </span>
+                            <ArrowUpRight className="w-4 h-4 text-muted-foreground group-hover:text-accent-primary transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
                           </h3>
                         </div>
                         <p className="text-muted-foreground group-hover:text-foreground leading-relaxed max-w-lg transition-colors duration-300">
