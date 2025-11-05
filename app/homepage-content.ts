@@ -56,7 +56,7 @@ export const jobs: Job[] = [
     role: "Full Stack Developer",
     company: "Tracks (Transporeon)",
     description:
-      "Develop fuel consomuption tracking features. Built POC for company website using static site generation.",
+      "Develop fuel consomption tracking features. Built POC for company website using static site generation.",
     tech: ["Vue", "Django", "Python"],
     website: "https://www.transporeon.com/",
   },
