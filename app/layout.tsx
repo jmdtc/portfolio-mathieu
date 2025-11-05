@@ -28,6 +28,9 @@ export const metadata: Metadata = {
   title: "Mathieu Delisle - Full Stack Engineer",
   description:
     "Full Stack Engineer based in Berlin, Germany. Building neat products with React, TypeScript, and Next.js.",
+  icons: {
+    icon: "/icon.svg",
+  },
 };
 
 export default function RootLayout({
