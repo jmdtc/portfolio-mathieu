@@ -71,22 +71,6 @@ export default function Home() {
                       </span>
                     </div>
                   </div>
-
-                  {/* <div>
-                    <div className="text-xs text-muted-foreground mb-4">
-                      FOCUS
-                    </div>
-                    <div className="flex flex-wrap gap-2">
-                      {skills.map((skill) => (
-                        <span
-                          key={skill}
-                          className="px-3 py-1 text-xs border border-border rounded-full hover:border-accent-primary/50 hover:text-accent-primary transition-colors duration-300"
-                        >
-                          {skill}
-                        </span>
-                      ))}
-                    </div>
-                  </div> */}
                 </div>
               </div>
             </header>
@@ -102,58 +86,43 @@ export default function Home() {
                 </h2>
 
                 <div className="space-y-8 sm:space-y-12">
-                  {jobs.map((job, index) => {
-                    const content = (
-                      <>
-                        <div className="lg:col-span-2">
-                          <div className="text-xl sm:text-2xl font-serif font-light text-muted-foreground group-hover:text-foreground transition-colors duration-500">
-                            {job.year}
-                          </div>
+                  {jobs.map((job, index) => (
+                    <a
+                      key={index}
+                      href={job.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group grid lg:grid-cols-12 gap-4 sm:gap-8 py-6 sm:py-8"
+                    >
+                      <div className="lg:col-span-2">
+                        <div className="text-xl sm:text-2xl font-serif font-light text-muted-foreground group-hover:text-foreground transition-colors duration-500">
+                          {job.year}
                         </div>
-
-                        <div className="lg:col-span-6 space-y-3">
-                          <div>
-                            <h3 className="text-lg sm:text-xl font-serif font-medium group-hover:text-accent-primary transition-colors duration-300">
-                              {job.role} · {job.company}
-                            </h3>
-                          </div>
-                          <p className="text-muted-foreground group-hover:text-foreground leading-relaxed max-w-lg transition-colors duration-300">
-                            {job.description}
-                          </p>
-                        </div>
-
-                        <div className="lg:col-span-4 flex flex-wrap gap-2 lg:justify-end items-start self-start mt-2 lg:mt-0">
-                          {job.tech.map((tech) => (
-                            <span
-                              key={tech}
-                              className="px-2 py-1 text-xs text-muted-foreground rounded group-hover:text-foreground transition-colors duration-500 font-mono"
-                            >
-                              {tech}
-                            </span>
-                          ))}
-                        </div>
-                      </>
-                    );
-
-                    return job.website ? (
-                      <a
-                        key={index}
-                        href={job.website}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="group grid lg:grid-cols-12 gap-4 sm:gap-8 py-6 sm:py-8 block"
-                      >
-                        {content}
-                      </a>
-                    ) : (
-                      <div
-                        key={index}
-                        className="group grid lg:grid-cols-12 gap-4 sm:gap-8 py-6 sm:py-8"
-                      >
-                        {content}
                       </div>
-                    );
-                  })}
+
+                      <div className="lg:col-span-6 space-y-3">
+                        <div>
+                          <h3 className="text-lg sm:text-xl font-serif font-medium group-hover:text-accent-primary transition-colors duration-300">
+                            {job.role} · {job.company}
+                          </h3>
+                        </div>
+                        <p className="text-muted-foreground group-hover:text-foreground leading-relaxed max-w-lg transition-colors duration-300">
+                          {job.description}
+                        </p>
+                      </div>
+
+                      <div className="lg:col-span-4 flex flex-wrap gap-2 lg:justify-end items-start self-start mt-2 lg:mt-0">
+                        {job.tech.map((tech) => (
+                          <span
+                            key={tech}
+                            className="px-2 py-1 text-xs text-muted-foreground rounded group-hover:text-foreground transition-colors duration-500 font-mono"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </a>
+                  ))}
                 </div>
               </div>
             </section>
@@ -201,7 +170,7 @@ export default function Home() {
                   ].map((post, index) => (
                     <article
                       key={index}
-                      className="group p-6 sm:p-8 border border-border rounded-lg hover:border-accent-primary/50 hover:text-accent-primary transition-all duration-500 hover:shadow-lg cursor-pointer"
+                      className="group p-6 sm:p-8 border border-border rounded-lg hover:border-accent-primary hover:text-accent-primary transition-all duration-500 hover:shadow-lg cursor-pointer"
                     >
                       <div className="space-y-4">
                         <div className="flex items-center justify-between text-xs text-muted-foreground font-mono">
@@ -291,7 +260,7 @@ export default function Home() {
                       <Link
                         key={social.name}
                         href={social.url}
-                        className="group p-4 border border-border rounded-lg hover:border-accent-primary/50 transition-all duration-300 hover:shadow-sm"
+                        className="group p-4 border border-border rounded-lg hover:border-accent-primary transition-all duration-300 hover:shadow-sm"
                       >
                         <div className="space-y-2">
                           <div className="text-foreground group-hover:text-accent-primary transition-colors duration-300">
@@ -311,11 +280,11 @@ export default function Home() {
             <footer className="py-12 sm:py-16 border-t border-border">
               <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 sm:gap-8">
                 <div className="space-y-2">
-                  <div className="text-sm text-muted-foreground">
-                    © 2025 Mathieu Delisle
+                  <div className="text-sm text-foreground">
+                    Built with love and Next.js
                   </div>
                   <div className="text-xs text-muted-foreground">
-                    Built with love and Next.js
+                    © 2025 Mathieu Delisle
                   </div>
                 </div>
               </div>
@@ -323,8 +292,6 @@ export default function Home() {
           </main>
         )}
       </SectionLayout>
-
-      <div className="fixed bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background via-background/80 to-transparent pointer-events-none"></div>
     </div>
   );
 }

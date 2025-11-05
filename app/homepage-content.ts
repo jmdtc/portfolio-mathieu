@@ -54,7 +54,7 @@ export const jobs: Job[] = [
   {
     year: "2021",
     role: "Full Stack Developer",
-    company: "Tracks",
+    company: "Tracks (Transporeon)",
     description:
       "Develop fuel consomuption tracking features. Built POC for company website using static site generation.",
     tech: ["Vue", "Django", "Python"],
