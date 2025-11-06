@@ -95,11 +95,9 @@ export default function Home() {
 
                       <div className="lg:col-span-6 space-y-3">
                         <div>
-                          <h3 className="text-lg sm:text-xl font-serif font-medium group-hover:text-accent-primary transition-colors duration-300 flex items-center gap-2">
-                            <span>
-                              {job.role} · {job.company}
-                            </span>
-                            <ArrowUpRight className="w-4 h-4 text-muted-foreground group-hover:text-accent-primary transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
+                          <h3 className="text-lg sm:text-xl font-serif font-medium group-hover:text-accent-primary transition-colors duration-300">
+                            {job.role} · {job.company}{" "}
+                            <ArrowUpRight className="inline w-4 h-4 transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
                           </h3>
                         </div>
                         <p className="text-muted-foreground group-hover:text-foreground leading-relaxed max-w-lg transition-colors duration-300">
