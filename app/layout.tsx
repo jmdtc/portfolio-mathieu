@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Gelasio, Archivo, Space_Mono } from "next/font/google";
 import clsx from "clsx";
 import "./globals.css";
+import { PostHogProvider } from "./components/PostHogProvider";
 
 const gelasio = Gelasio({
   subsets: ["latin"],
@@ -43,7 +44,9 @@ export default function RootLayout({
       lang="en"
       className={clsx(gelasio.variable, archivo.variable, spaceMono.variable)}
     >
-      <body className="font-sans antialiased">{children}</body>
+      <body className="font-sans antialiased">
+        <PostHogProvider>{children}</PostHogProvider>
+      </body>
     </html>
   );
 }
